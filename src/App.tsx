@@ -1,25 +1,19 @@
-import { useState } from 'react';
-import viteLogo from '/vite.svg';
-import './App.css';
+import Results from "./Results";
+import "./index.css";
+import data from "../data.json";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    <div className="App relative h-screen font-hankenGrotesk lg:flex lg:flex-col lg:items-center lg:justify-center">
+      <Results data={data} />
+      <div className="absolute inset-x-0 bottom-0 text-center">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          {" "}
+          Frontend Mentor.{" "}
         </a>
+        Coded by <a href="https://walteraugustine.com">Walter</a>.
       </div>
-      <h1>Vite + React + Sneed</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </div>
   );
 }
